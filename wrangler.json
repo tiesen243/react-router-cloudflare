@@ -1,14 +1,30 @@
 {
-	"$schema": "./node_modules/wrangler/config-schema.json",
-	"name": "react-router-cloudflare",
-	"main": "./workers/app.ts",
-	"compatibility_date": "2025-10-08",
-	"compatibility_flags": ["nodejs_compat"],
-	"observability": {
-		"enabled": true
-	},
-	"upload_source_maps": true,
-	"vars": {
-		"VALUE_FROM_CLOUDFLARE": "Hello from Cloudflare"
-	}
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "react-router-cloudflare",
+  "main": "./workers/app.ts",
+  "compatibility_date": "2025-10-08",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "upload_source_maps": true,
+  "vars": {
+    "VALUE_FROM_CLOUDFLARE": "Hello from Cloudflare"
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "yuki_db",
+      "database_id": "a6ae20d4-8e5a-4d51-84c2-6c24f6d50fb3",
+      "migrations_dir": "drizzle"
+    }
+  ],
+
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "f6c83ccb4dab45f8bc99c62641e972b2"
+    }
+  ]
 }
