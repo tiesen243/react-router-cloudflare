@@ -83,7 +83,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         {loaderData.posts.map((post) => (
           <Card key={post.id}>
             <CardHeader>
-              <CardTitle>{post.title}</CardTitle>
+              <CardTitle className='truncate'>{post.title}</CardTitle>
               <CardDescription>#{post.id}</CardDescription>
               <Form
                 method='delete'
@@ -97,7 +97,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               </Form>
             </CardHeader>
             <CardContent>
-              <p>{post.content}</p>
+              <p className='truncate'>{post.content}</p>
             </CardContent>
           </Card>
         ))}
